@@ -5,7 +5,7 @@ import org.litepal.crud.DataSupport;
 /**
  * 县
  */
-public class Coundy extends DataSupport {
+public class County extends DataSupport {
     private int id;
     private String countyName;
     private String weatherId;
