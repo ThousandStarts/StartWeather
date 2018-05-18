@@ -1,6 +1,7 @@
 package com.example.startweather;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -26,6 +27,7 @@ import com.bumptech.glide.Glide;
 import com.example.startweather.gson.Forecast;
 import com.example.startweather.gson.Lifestyle;
 import com.example.startweather.gson.Weather;
+import com.example.startweather.service.AutoUpdateService;
 import com.example.startweather.util.HttpUtil;
 import com.example.startweather.util.LogUtil;
 import com.example.startweather.util.Utility;
@@ -277,6 +279,9 @@ public class WeatherActivity extends AppCompatActivity {
 
         //显示
         weatherLayout.setVisibility(View.VISIBLE);
+        //启动服务
+        Intent intent=new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 
     //时间比较
