@@ -114,8 +114,8 @@ public class WeatherActivity extends AppCompatActivity {
         String weatherString=prefs.getString("weather",null);
         String bingPic=prefs.getString("bing_pic",null);
 
-        //if(weatherString!=null){
-        if(false){
+        if(weatherString!=null){
+        //if(false){
             LogUtil.d("activity_weather:",weatherString);
             Weather weather= Utility.handleWeatherResponse(weatherString);
             //存放城市
@@ -129,8 +129,8 @@ public class WeatherActivity extends AppCompatActivity {
             requestWeather(weatherId);
         }
 
-        //if(bingPic!=null){
-        if(false){
+        if(bingPic!=null){
+        //if(false){
             Glide.with(this).load(bingPic).into(bingPicImg);
         }else{
             loadBingPic();
